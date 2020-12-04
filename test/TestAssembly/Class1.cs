@@ -5,7 +5,8 @@ namespace TestAssembly
 {
     internal class MyAttribute : Attribute { }
 
-    public class GenericClass<T> where T : class { }
+    public class GenericClass<T> { }
+    public class GenericClassWithConstraints<T> where T : class { }
 
     [My]
     public class Class1

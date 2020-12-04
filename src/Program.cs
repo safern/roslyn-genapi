@@ -118,14 +118,14 @@ namespace RoslynGenApi
                 
                 if (node.BaseList == null)
                 {
-                    if (node.TypeParameterList != null && node.ConstraintClauses.Count <= 0)
+                    // we returned null when removing System.Object, let's add the new line again.
+                    if (node.TypeParameterList == null)
+                    {
+                        node = node.WithIdentifier(node.Identifier.WithTrailingTrivia(Environment.NewLine));
+                    }
+                    else if (node.ConstraintClauses.Count <=0)
                     {
                         node = node.WithTypeParameterList(node.TypeParameterList.WithTrailingTrivia(Environment.NewLine));
-                    }
-                    else if (node.ConstraintClauses.Count > 0)
-                    {
-                        // we returned null when removing System.Object, let's add the new line again.
-                        node = node.WithIdentifier(node.Identifier.WithTrailingTrivia(Environment.NewLine));
                     }
                 }
 
@@ -240,26 +240,6 @@ namespace RoslynGenApi
             private BlockSyntax GetMethodBodyFromText(string text, bool newLine = true) =>
                 SyntaxFactory.Block(SyntaxFactory.ParseStatement(text))
                              .WithTrailingTrivia(newLine ? Environment.NewLine : Space);
-        }
-
-        class SymbolVisitorMine : SymbolVisitor
-        {
-            public override void VisitAssembly(IAssemblySymbol symbol)
-            {
-                Console.WriteLine($"Assembly: {symbol.Identity.GetDisplayName()}");
-
-                IEnumerable<INamedTypeSymbol> forwardedTypes = symbol.GetForwardedTypes();
-                //IList<INamespaceSymbol> forwardedTypesNamespaces = symbo
-                
-                foreach (INamedTypeSymbol forwardedType in forwardedTypes)
-                {
-                    //Console.WriteLine($"Forwarded: {forwardedType.ContainingAssembly}");
-                    forwardedType.Accept(this);
-                }
-
-                symbol.GlobalNamespace.Accept(this);
-
-            }
         }
     }
 
