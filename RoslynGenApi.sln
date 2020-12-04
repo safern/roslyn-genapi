@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30704.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AEF2F5F7-621B-41E9-9BE6-3B68DB23FAE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssembly", "test\TestAssembly\TestAssembly.csproj", "{E5560B92-4291-4415-91DC-2364A8EA273E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoslynGenApi", "src\RoslynGenApi.csproj", "{21754DCD-EB3C-4C95-9D0F-C41EF4388F75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F350043-3000-45E1-92EF-9C1BCC05105F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5560B92-4291-4415-91DC-2364A8EA273E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5560B92-4291-4415-91DC-2364A8EA273E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5560B92-4291-4415-91DC-2364A8EA273E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5560B92-4291-4415-91DC-2364A8EA273E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21754DCD-EB3C-4C95-9D0F-C41EF4388F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21754DCD-EB3C-4C95-9D0F-C41EF4388F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21754DCD-EB3C-4C95-9D0F-C41EF4388F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21754DCD-EB3C-4C95-9D0F-C41EF4388F75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5560B92-4291-4415-91DC-2364A8EA273E} = {AEF2F5F7-621B-41E9-9BE6-3B68DB23FAE2}
+		{21754DCD-EB3C-4C95-9D0F-C41EF4388F75} = {6F350043-3000-45E1-92EF-9C1BCC05105F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {965F71C1-6E92-4112-A0B6-5597343C0139}
+	EndGlobalSection
+EndGlobal
