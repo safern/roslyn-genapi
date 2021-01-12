@@ -132,6 +132,11 @@ namespace RoslynGenApi
                 return node;
             }
 
+            public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
+            {
+                return base.VisitEnumDeclaration(node.WithTrailingTrivia(Environment.NewLine));
+            }
+
             public override SyntaxNode VisitBaseList(BaseListSyntax node)
             {
                 ChildSyntaxList.Enumerator enumerator = node.ChildNodesAndTokens().GetEnumerator();

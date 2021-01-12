@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.8.0-5.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.9.0-4.21062.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\out.cs" Condition="Exists('..\out.cs')" />
   </ItemGroup>
 
 </Project>
